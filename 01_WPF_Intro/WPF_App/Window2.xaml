@@ -1,0 +1,109 @@
+﻿<Window x:Class="WPF_App.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_App"
+        mc:Ignorable="d"
+  >
+
+    <Grid>
+        <!-- Define Rows and Columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <!-- Header -->
+            <RowDefinition Height="*"/>
+            <!-- Main Content -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Content Area -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="DarkBlue">
+            <TextBlock Text="My Dashboard" 
+                       Foreground="White" 
+                       FontSize="20" 
+                       VerticalAlignment="Center" 
+                       Margin="10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
+                <Button Content="Login" Width="80" Margin="5"/>
+                <Button Content="Register" Width="80" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Sidebar -->
+        <Grid Grid.Row="1" Grid.Column="0" Background="LightGray">
+            <StackPanel Margin="10">
+                <TextBlock Text="Navigation" FontWeight="Bold" Margin="0,0,0,10"/>
+                <Button Content="Home" Margin="0,5"/>
+                <Button Content="Profile" Margin="0,5"/>
+                <Button Content="Settings" Margin="0,5"/>
+                <Button Content="Help" Margin="0,5"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Content Area -->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="10" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Content Header -->
+                <RowDefinition Height="*"/>
+                <!-- Content Sections -->
+            </Grid.RowDefinitions>
+
+            <!-- Content Header -->
+            <TextBlock Grid.Row="0" Text="Welcome to the Dashboard!" 
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+
+            <!-- Content Sections -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Section 1 -->
+                <Border Grid.Row="0" Grid.Column="0" Background="LightBlue" Margin="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Section 1" FontWeight="Bold"/>
+                        <TextBlock Text="Content for Section 1" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Section 2 -->
+                <Border Grid.Row="0" Grid.Column="1" Background="LightGreen" Margin="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Section 2" FontWeight="Bold"/>
+                        <TextBlock Text="Content for Section 2" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Section 3 -->
+                <Border Grid.Row="1" Grid.Column="0" Background="LightCoral" Margin="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Section 3" FontWeight="Bold"/>
+                        <TextBlock Text="Content for Section 3" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Section 4 -->
+                <Border Grid.Row="1" Grid.Column="1" Background="LightGoldenrodYellow" Margin="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Section 4" FontWeight="Bold"/>
+                        <TextBlock Text="Content for Section 4" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

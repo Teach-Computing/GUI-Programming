@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <!-- Slider to Label FontSize Binding -->
+            <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="40" Value="20" Width="200" Margin="5" />
+            <Label x:Name="SampleLabel" Content="Sample Text" FontSize="{Binding ElementName=FontSizeSlider, Path=Value}" Margin="5" />
+
+            <!-- TextBox to Label Content Binding -->
+            <TextBox x:Name="TextBoxInput" Width="200" Margin="5" Text="{Binding ElementName=SampleLabel, 
+                Path=Content, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <!-- ComboBox to TextBlock Binding -->
+            <ComboBox x:Name="TextComboBox" Width="200" Margin="5" SelectedIndex="0">
+                <ComboBoxItem Content="Option 1" />
+                <ComboBoxItem Content="Option 2" />
+                <ComboBoxItem Content="Option 3" />
+            </ComboBox>
+            <TextBlock Text="{Binding ElementName=TextComboBox, Path=SelectedItem.Content}" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>
